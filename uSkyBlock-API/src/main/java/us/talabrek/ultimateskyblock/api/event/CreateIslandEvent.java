@@ -10,10 +10,15 @@ import org.bukkit.event.HandlerList;
 public class CreateIslandEvent extends CancellablePlayerEvent {
     private static final HandlerList handlers = new HandlerList();
     private final String schematic;
+    private final Player who;
 
     public CreateIslandEvent(Player who, String schematic) {
-        super(who);
+        this.who = who;
         this.schematic = schematic;
+    }
+    
+    public String getPlayer() {
+        return who;
     }
 
     public String getSchematic() {
